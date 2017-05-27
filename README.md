@@ -21,13 +21,13 @@ Usage
 
 Using the Composer command line:
 ```sh
-composer require symfony/lts 2
+composer require symfony/lts 3
 ```
 
 Or patching your `composer.json` file:
 ```json
     "require": {
-        "symfony/lts": "2"
+        "symfony/lts": "3"
     }
 ```
 
