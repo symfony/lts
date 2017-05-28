@@ -1,45 +1,39 @@
-Symfony LTS - Enforcing Long Term Supported versions of components
-==================================================================
+Enforcing Long Term Supported Versions of the Symfony Components
+================================================================
 
-When using the `symfony/symfony` Composer meta-package, you get all Symfony
-Components at once, all in the same version. But when using standalone Composer
-packages, you might get their dependencies in a different major version (e.g.
-`symfony/http-kernel` v2.8 is compatible with `symfony/event-dispatcher` v3.0.)
+Using `symfony/symfony` makes Composer install all Symfony Components, all in
+the same version. But when using the standalone packages, Composer might
+install dependencies in a different major version (`symfony/http-kernel` v2.8
+is compatible with `symfony/event-dispatcher` v3.0 for instance).
 
-This is fine when you don't use these transitive dependencies in your own code.
-But once you do, you'd better stick to the actual major version that you support.
+This is fine if you don't want to stick to Symfony LTS versions and if your
+code does not use these transitive dependencies.
 
-This special Composer package allows you to enforce that any Symfony Components
-you use, transitively or not, stick to *The* major version you decided to be.
+This Composer package allows you to enforce a consistent major version on all
+Symfony Components, whether they are explicitly listed as a project's
+dependency or installed transitively.
 
-Note that this is meant to be used by *root* Composer applications. Library
-authors SHOULD NOT use it, except maybe in the `"require-dev"` section of their
-`composer.json` files.
+Note that this package is meant to be used by projects. Library authors SHOULD
+NOT use it, except maybe in the `"require-dev"` Composer section.
 
 Usage
 -----
 
-Using the Composer command line:
-```sh
-composer require symfony/lts 3
+Use the Composer command line:
+
+```bash
+composer require symfony/lts v3
 ```
 
-Or patching your `composer.json` file:
-```json
-    "require": {
-        "symfony/lts": "3"
-    }
-```
-
-Versioning policy
+Versioning Policy
 ------------------
 
-There is only one version of this `symfony/lts` package per major Symfony version.
-Each version is tagged at the same time than the *last* minor version of
-each major release (e.g. `v3` when Symfony `v3.4.0` is out.)
+There is only one version of the `symfony/lts` package per major Symfony
+version. Each version is tagged at the same time as the *last* minor version of
+each major release (`v3` when Symfony `v3.4.0` is out.)
 
-At this same time also, the Composer `branch-alias` is increased to the next
+At the same time also, the Composer `branch-alias` is increased to the next
 major version number.
 
-(As a corollary, if one wants to use the next *unreleased* major version of Symfony
-right now, one should just not use this package at all.)
+If one wants to use the next *unreleased* major version of Symfony, one should
+not use this package at all.
