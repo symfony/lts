@@ -1,0 +1,6 @@
+---------------------------------------------------------------------------
+
+by stof at 2017-08-23T16:46:47Z
+
+@nicolas-grekas I would rather make symfony/symfony conflict with Flex for flex-enabled versions rather than having the Flex having this conflict.
+The actual conflict is on symfony/symfony side: the fullstack package is not flex-enabled while components are, and so you loose the Symfony configuration features when using the fullstack.
