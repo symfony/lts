@@ -3,8 +3,8 @@ Enforcing Long Term Supported Versions of the Symfony Components
 
 Using `symfony/symfony` makes Composer install all Symfony Components, all in
 the same version. But when using the standalone packages, Composer might
-install dependencies in a different major version (`symfony/http-kernel` v2.8
-is compatible with `symfony/event-dispatcher` v3.0 for instance).
+install dependencies in a different major version (`symfony/http-kernel` v3.4
+is compatible with `symfony/event-dispatcher` v4.0 for instance).
 
 This is fine if you don't want to stick to Symfony LTS versions and if your
 code does not use these transitive dependencies.
@@ -30,7 +30,7 @@ Versioning Policy
 
 There is only one version of the `symfony/lts` package per major Symfony
 version. Each version is tagged at the same time as the *last* minor version of
-each major release (`v3` when Symfony `v3.4.0` is out.)
+each major release (`v4` when Symfony `v4.4.0` is out.)
 
 At the same time also, the Composer `branch-alias` is increased to the next
 major version number.
