@@ -42,6 +42,7 @@
         "symfony/lock": ">=5",
         "symfony/monolog-bridge": ">=5",
         "symfony/options-resolver": ">=5",
+        "symfony/phpunit-bridge": ">=5",
         "symfony/process": ">=5",
         "symfony/property-access": ">=5",
         "symfony/property-info": ">=5",
