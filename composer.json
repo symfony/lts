@@ -40,6 +40,7 @@
         "symfony/intl": ">=5",
         "symfony/ldap": ">=5",
         "symfony/lock": ">=5",
+        "symfony/messenger": ">=5",
         "symfony/monolog-bridge": ">=5",
         "symfony/options-resolver": ">=5",
         "symfony/process": ">=5",
