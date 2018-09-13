@@ -1,39 +1,10 @@
 Enforcing Long Term Supported Versions of the Symfony Components
 ================================================================
 
-Using `symfony/symfony` makes Composer install all Symfony Components, all in
-the same version. But when using the standalone packages, Composer might
-install dependencies in a different major version (`symfony/http-kernel` v3.4
-is compatible with `symfony/event-dispatcher` v4.0 for instance).
+This package is abandoned.
 
-This is fine if you don't want to stick to Symfony LTS versions and if your
-code does not use these transitive dependencies.
+Use `symfony/flex` instead and configure its `extra.symfony.require` setting
+to the version range you'd like to have.
 
-This Composer package allows you to enforce a consistent major version on all
-Symfony Components, whether they are explicitly listed as a project's
-dependency or installed transitively.
-
-Note that this package is meant to be used by projects. Library authors SHOULD
-NOT use it, except maybe in the `"require-dev"` Composer section.
-
-Usage
------
-
-Use the Composer command line:
-
-```bash
-composer require symfony/lts v3
-```
-
-Versioning Policy
-------------------
-
-There is only one version of the `symfony/lts` package per major Symfony
-version. Each version is tagged at the same time as the *last* minor version of
-each major release (`v4` when Symfony `v4.4.0` is out.)
-
-At the same time also, the Composer `branch-alias` is increased to the next
-major version number.
-
-If one wants to use the next *unreleased* major version of Symfony, one should
-not use this package at all.
+For example, `composer config extra.symfony.require ~4.1.0` restricts the
+versions of all Symfony components to `~4.1.0`.
